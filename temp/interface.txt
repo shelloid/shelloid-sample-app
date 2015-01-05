@@ -1,0 +1,20 @@
+[service listFriends]
+[request]
+req:
+{
+   userid: Integer;
+}
+
+with req{
+	userid >= 0 && userid <= 99;
+}
+
+[response]
+
+resp:
+{
+  friends : 
+  [{friendId: Integer; friendName: String}]
+}
+
+resp.friends.length <= 20;
