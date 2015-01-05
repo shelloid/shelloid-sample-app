@@ -4,5 +4,6 @@
 	},
 	"admin": {
 		"port": 9090
-	}
+	},	
+	"dataDir" : "data"
 }

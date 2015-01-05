@@ -1,20 +1,26 @@
-[service listFriends]
-[request]
-req:
+var assert = require("assert");
+modules.export = 
 {
-   userid: Integer;
+
+	"req.body":
+	{
+	   "userid" : "integer",
+	   "comment": ["string", "opt"]
+	},
+	
+	"req.query" : {"name": "string"},
+	
+	"req.validate" : function(req){
+		assert(req.body.userid <= 10);
+	}
+
+	"resp.body":
+	{
+		"friends" : 
+			[{"friendId": "integer"; "friendName": "string"}, "opt"]
+	}
+	
+	"resp.validate" : function(req){
+		assert(resp.body.friends.length <= 100);
+	}
 }
-
-with req{
-	userid >= 0 && userid <= 99;
-}
-
-[response]
-
-resp:
-{
-  friends : 
-  [{friendId: Integer; friendName: String}]
-}
-
-resp.friends.length <= 20;
