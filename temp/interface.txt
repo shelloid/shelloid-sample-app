@@ -20,7 +20,7 @@ modules.export =
 			[{"friendId": "integer"; "friendName": "string"}, "opt"]
 	}
 	
-	"resp.validate" : function(req){
+	"resp.validate" : function(resp){
 		assert(resp.body.friends.length <= 100);
 	}
 }
