@@ -1,4 +1,4 @@
-dependjs-app
+Shelloid sample app
 ============
 
-Example Depend.JS app
+Sample Shelloid Web App.

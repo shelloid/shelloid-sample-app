@@ -1,5 +1,5 @@
 /**
- @auth "local"
+ @auth {a:"local"}
 */
 exports.auth = function(msg, done){
 	
