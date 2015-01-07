@@ -18,9 +18,8 @@ exports.auth = function(req, done, err){
 }
 
 /**
-  @auth 	  ["google", "facebook", "twitter"]
+  @auth 	  ["google"]
   @pathPrefix "/login"
-  @ignore
 */
 exports.providerAuth  = function(req, done, err){
 	if(req.profile.email == "xxx@gmail.com"){

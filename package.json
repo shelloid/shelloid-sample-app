@@ -10,6 +10,7 @@
     "license": "MIT",
     "dependencies": {
         "file": "0.2.2",
-        "passport-local": "*"
+        "passport-local": "*",
+        "passport-google": "*"
     }
 }
