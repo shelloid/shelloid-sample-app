@@ -3,7 +3,6 @@ var m = require("file");
 /**
   @path     	/\/ab.c/
   @method       ["get", "post"]
-  @disable 
 */
 exports.index = function(req, resp){ 
 	resp.end("<h1>index!</h1>");
@@ -11,6 +10,7 @@ exports.index = function(req, resp){
 
 /**
    @pathSuffix 	":id"
+   @ignore
 */
 exports.world = function(req, resp){
 	resp.end("<h1>world!</h1>");
