@@ -18,11 +18,12 @@ exports.auth = function(req, done, err){
 }
 
 /**
-  @auth 	  ["google"]
+  @auth 	  "google"
   @pathPrefix "/login"
 */
 exports.providerAuth  = function(req, done, err){
-	if(req.profile.email == "xxx@gmail.com"){
+	if(req.profile.emails && req.profile.emails.length > 0 && 
+		req.profile.emails[0].value == "jayaraj.poroor@gmail.com"){
 		done({username: req.profile.email});
 	}else{
 		err("Invalid authentication attempt: " + req.profile.email);
