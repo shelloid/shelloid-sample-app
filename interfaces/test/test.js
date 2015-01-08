@@ -3,11 +3,11 @@ exports.req =
 	type: "json",
 	body:
 	{
-	   userid : "integer",
+	   userid : "number",
 	   comment: optional("string")
 	},
 	
-	query : {"name": "string"},
+	query : {name: "string"},
 	
 	validate : function(req){
 		req.assert(req.body.userid <= 10);
@@ -20,14 +20,14 @@ exports.resp = {
 	body:
 	{
 		friends: optional(
-			[{friendId: "integer"; friendName: "string"}]
+			[{friendId: "number", friendName: "string"}]
 		),
 		info: optional(
-			{"txt": "string"}
+			{txt: "string"}
 		)
-	}
+	},
 	
-	"validate" : function(resp){
+	validate : function(resp){
 		resp.assert(resp.body.friends.length <= 100);
 		resp.validated();
 	}
