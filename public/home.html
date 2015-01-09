@@ -1,0 +1,27 @@
+<html>
+<head><title>Home</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+</head>
+<body>
+<h1>Home</h1>
+<input type="button" value="request!" id="req">
+<script>
+$("#req").click(function()
+{
+	$.ajax({
+		type: "POST",
+		url: "/test/test?ref=abc",
+		data: JSON.stringify({ id : 3}),
+		dataType: "json",
+		contentType: "application/json"
+	}).done(function( data ) {
+		console.log("RESPONSE", data);
+		alert(JSON.stringify(data));
+	 }).fail(function(err){
+		alert("Request failed");
+	 });
+});
+</script>
+</body>
+</html>

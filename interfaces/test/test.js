@@ -1,16 +1,14 @@
 exports.req = 
 {
-	type: "json",
+	contentType: "json",
 	body:
 	{
-	   userid : number,
-	   comment: optional(string)
+	   id : num.min(0)
 	},
 	
-	query : {name: string},
+	query : {ref: str},
 	
 	validate : function(req){
-		req.assert(req.body.userid <= 10);
 		req.validated();
 	}
 }
@@ -19,16 +17,10 @@ exports.resp = {
 	contentType: "application/json",
 	body:
 	{
-		friends: optional(
-			[{friendId: number, friendName: string}]
-		),
-		info: optional(
-			{txt: string}
-		)
+		info: str,
 	},
 	
 	validate : function(resp){
-		resp.assert(resp.body.friends.length <= 100);
 		resp.validated();
 	}
 }
