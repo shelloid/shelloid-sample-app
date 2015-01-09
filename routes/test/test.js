@@ -2,6 +2,6 @@
 	@interface "test/test"
 */
 exports.index = function(req, resp){
-	console.log(req.body);
+	shelloid.log(req.body);
 	resp.send({info: "hello world: " + req.body.id});
 }
