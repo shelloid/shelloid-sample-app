@@ -12,7 +12,7 @@ $("#req").click(function()
 	$.ajax({
 		type: "POST",
 		url: "/test/test?ref=abc",
-		data: JSON.stringify({ id : 3}),
+		data: JSON.stringify({ id : "abc"}),
 		dataType: "json",
 		contentType: "application/json"
 	}).done(function( data ) {
