@@ -11,6 +11,8 @@
     "dependencies": {
         "file": "0.2.2",
         "passport-local": "*",
-        "passport-google": "*"
+        "passport-google": "*",
+        "redis": "0.12.1",
+        "mysql": "*"
     }
 }

@@ -22,10 +22,10 @@ exports.auth = function(req, done, err){
   @pathPrefix "/login"
 */
 exports.providerAuth  = function(req, done, err){
-	if(req.profile.emails && req.profile.emails.length > 0 && 
-		req.profile.emails[0].value == "jayaraj.poroor@gmail.com"){
-		done({username: req.profile.email});
+	if(req.profile.emails && req.profile.emails.length > 0){
+		console.log("Successfully authenticated: " + req.profile.emails[0].value);
+		done({username: req.profile.emails[0].value});
 	}else{
-		err("Invalid authentication attempt: " + req.profile.email);
+		err("Invalid authentication attempt: " + req.profile.emails[0].value);
 	}
 }

@@ -1,7 +1,23 @@
 {
-	"enableCluster": true,
+	"enableCluster": false,
 	"dataDir" : "data",
 	"auth" : {
 		"successRedirect" : "/home.html"
+	},
+	"session":{
+		"store" : "redis1"
+	},
+	"databases":{
+		"redis1" : {
+			"type": "redis",
+			"password": "test123",
+			"host" : "localhost"
+		},
+		"mysql1" : {
+			"type": "mysql",
+			"user": "test",
+			"password": "test123",
+			"host" : "localhost"
+		}		
 	}
 }

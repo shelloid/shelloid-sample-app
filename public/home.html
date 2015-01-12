@@ -11,8 +11,8 @@ $("#req").click(function()
 {
 	$.ajax({
 		type: "POST",
-		url: "/test/test?ref=abc",
-		data: JSON.stringify({ id : "abc"}),
+		url: "/test/test?ref=1",
+		data: JSON.stringify({ id : 1}),
 		dataType: "json",
 		contentType: "application/json"
 	}).done(function( data ) {
