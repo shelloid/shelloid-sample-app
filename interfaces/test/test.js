@@ -9,7 +9,11 @@ exports.req =
 	query : {ref: str},
 	
 	validate : function(req){
-		req.validated();
+		process.nextTick(function(){
+			console.log("Asynchronous request validation");
+			//req.assert(false);
+			req.validated();
+		});
 	}
 }
 
