@@ -5,19 +5,20 @@
 		"successRedirect" : "/home.html"
 	},
 	"session":{
-		"store" : "redis1"
+		"store" : "cache"
 	},
 	"databases":{
-		"redis1" : {
+		"cache" : {
 			"type": "redis",
 			"password": "test123",
 			"host" : "localhost"
 		},
-		"mysql1" : {
+		"maindb" : {
 			"type": "mysql",
 			"user": "test",
 			"password": "test123",
-			"host" : "localhost"
+			"host" : "localhost",
+			"database": "test"
 		}		
 	}
 }

@@ -10,14 +10,14 @@ exports.req =
 	
 	validate : function(req){
 		process.nextTick(function(){
-			console.log("Asynchronous request validation");
+			console.log("Asynchronous request validation for:" +req.url);
 			//req.assert(false);
 			req.validated();
 		});
 	}
 }
 
-exports.resp = {
+exports.res = {
 	contentType: "application/json",
 	body:
 	{
