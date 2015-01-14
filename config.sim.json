@@ -1,0 +1,6 @@
+{
+	"dataDir" : "data",
+	"auth" : {
+		"successRedirect" : "/home.html"
+	}
+}
