@@ -1,8 +1,8 @@
 /**
 	@interface "test/test"
 */
-exports.index = function(req, res){
-	if(sh.envName == "prod"){
+exports.index = function(req, res, ctx){
+	if(ctx.env == "prod"){
 		var db = sh.db.get("maindb");
 		db
 		.query("select * from users where username=?", [req.user.username])

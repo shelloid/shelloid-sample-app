@@ -8,7 +8,7 @@ exports.req =
 	
 	query : {ref: str},
 	
-	validate : function(req){
+	validate : function(req, ctx){
 		process.nextTick(function(){
 			console.log("Asynchronous request validation for:" +req.url);
 			//req.assert(false);
@@ -24,7 +24,8 @@ exports.res = {
 		info: str,
 	},
 	
-	validate : function(resp){
-		resp.validated();
+	validate : function(req, res, ctx){
+		console.log("Asynchronous response validation for: " + req.url);
+		res.validated();
 	}
 }
