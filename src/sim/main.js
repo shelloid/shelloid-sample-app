@@ -8,7 +8,9 @@ function exec(done){
 	.step(function(req, res){
 	  req.body = {userid: 1, friendid: 2};
 	  req.url = "/user/friend/add";  
-	  req.route();
+	  //req.route();
+	  seq.cancel();//req.skip() will skip the current step.
+	  //req.repeat() will repeat the request 
 	})
 	.step(function(req, res){
 	  req.body = {userid: 1};
