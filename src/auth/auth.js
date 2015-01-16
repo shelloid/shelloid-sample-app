@@ -29,3 +29,10 @@ exports.providerAuth  = function(req, done, err){
 		err("Invalid authentication attempt: " + req.profile.emails[0].value);
 	}
 }
+
+/**
+ @auth  "api"
+*/
+exports.apiAuth = function(req, done, err){
+	done({id: 1});
+}

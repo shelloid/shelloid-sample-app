@@ -1,5 +1,6 @@
 /**
 	@interface "test/test"
+	@allowDomains false
 */
 exports.index = function(req, res, ctx){
 	if(ctx.env == "prod"){
@@ -16,4 +17,12 @@ exports.index = function(req, res, ctx){
 	}else{
 		res.send({info: "hello world: " + req.body.id});
 	}
+}
+
+/**
+ @auth "api"
+ @method "get"
+*/
+exports.api = function(req, res, ctx){
+	res.send({info: "API response"});
 }
