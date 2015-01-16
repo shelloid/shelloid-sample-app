@@ -3,5 +3,8 @@
 	"dataDir" : "data",
 	"auth" : {
 		"successRedirect" : "/home.html"
+	},
+	"nodes":{
+		"master": "192.168.10.1"
 	}
 }
