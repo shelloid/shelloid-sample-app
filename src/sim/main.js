@@ -7,6 +7,7 @@ function exec(done){
 	seq
 	.step(function(req, res){
 	  req.body = {userid: 1, friendid: 2};
+	  req.method = "post";
 	  req.url = "/user/friend/add";  
 	  //req.route();
 	  seq.cancel();//req.skip() will skip the current step.
@@ -14,6 +15,7 @@ function exec(done){
 	})
 	.step(function(req, res){
 	  req.body = {userid: 1};
+	  req.method = "get"
 	  req.url = "/user/friend/list";
 	  req.route();
 	})
@@ -28,6 +30,7 @@ function exec(done){
 	conc
 	.step(function(req, res){
 		req.url = "/test/test2";
+		req.method = "get";
 		req.route();
 	})
 	.success(function(req, res){
@@ -35,6 +38,7 @@ function exec(done){
 	})
 	.step(function(req, res){
 		req.url = "/test/test3";
+		req.method = "get";
 		req.route();
 	})
 	.success(function(req, res){
