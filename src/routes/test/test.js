@@ -4,7 +4,7 @@
 */
 exports.index = function(req, res, ctx){
 	if(ctx.env == "prod"){
-		var db = sh.db.get("maindb");
+		var db = sh.db("maindb");
 		db
 		.query("select * from users where username=?", [req.user.username])
 		.success(function(r){
